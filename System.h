@@ -28,8 +28,8 @@ struct System
 
     std::function<void(const ssq::sqstring&)> printHandler; // = []{};
 
-
-    ssq::sqstring objectToStringHelper(ssq::Object &o) const
+    static
+    ssq::sqstring objectToStringHelper(ssq::Object &o)
     {
         if (o.isNull())
         {
