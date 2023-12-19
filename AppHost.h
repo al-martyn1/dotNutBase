@@ -32,7 +32,7 @@ struct AppHost
         auto cls = vm.addClass( className.c_str()
                               , []( )
                                 {
-                                    return new System();
+                                    return new AppHost();
                                 }
                               , false // release
                               );

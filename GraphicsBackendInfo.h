@@ -37,6 +37,8 @@ struct GraphicsBackendInfo
     GraphicsBackendInfo& operator=( const GraphicsBackendInfo &) = default;
     GraphicsBackendInfo& operator=( GraphicsBackendInfo &&) = default;
 
+    ssq::sqstring getName() const { return name; }
+
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("GraphicsBackendInfo"))
     {
         auto cls = vm.addClass( className.c_str()
@@ -47,7 +49,8 @@ struct GraphicsBackendInfo
                               , false // release
                               );
 
-        cls.addVar(_SC("name"), &GraphicsBackendInfo::name);
+        //cls.addVar(_SC("name"), &GraphicsBackendInfo::name);
+        cls.addFunc(_SC("getName"), &GraphicsBackendInfo::getName);
 
         return cls;
     }

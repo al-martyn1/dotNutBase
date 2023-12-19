@@ -88,6 +88,8 @@ struct System
             printHandler(_SC("\n"));
         }
     }
+
+    SystemInfo getInfo() const { return info; }
     
 
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("System"))
@@ -100,7 +102,9 @@ struct System
                               , false // release
                               );
 
-        cls.addVar(_SC("info"         ), &System::info);
+        //cls.addVar(_SC("info"         ), &System::info);
+
+        cls.addFunc( _SC("getSysInfo") , &System::getInfo);
 
         // operators override
         cls.addFunc( _SC("smpprint"  ) , &System::smpPrint);

@@ -73,6 +73,15 @@ struct SystemInfo
     SystemInfo& operator=( SystemInfo &&) = default;
 
 
+    ssq::sqstring        getKernelName() const { return kernel    ; }
+    ssq::sqstring        getOsName    () const { return osName    ; }
+    ssq::sqstring        getOsVersion () const { return versionStr; }
+    ssq::sqstring        getPlatform  () const { return platform  ; }
+    GraphicsBackendInfo  getGraphicsBackendInfo() const { return graphicsBackendInfo; }
+
+    
+
+
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("SystemInfo"))
     {
         auto cls = vm.addClass( className.c_str()
@@ -83,13 +92,19 @@ struct SystemInfo
                               , false // release
                               );
 
-        cls.addVar(_SC("kernel"         ), &SystemInfo::kernel);
-        cls.addVar(_SC("os"             ), &SystemInfo::osName);
-        cls.addVar(_SC("osVer"          ), &SystemInfo::versionStr);
-        cls.addVar(_SC("versionStr"     ), &SystemInfo::versionStr);
-        cls.addVar(_SC("platform"       ), &SystemInfo::platform);
-        cls.addVar(_SC("graphicsBackend"), &SystemInfo::graphicsBackendInfo);
-        //cls.addVar(_SC(""), &SystemInfo::);
+        cls.addFunc( _SC("getKernelName"  ) , &SystemInfo::getKernelName);
+        cls.addFunc( _SC("getOsName    "  ) , &SystemInfo::getOsName    );
+        cls.addFunc( _SC("getOsVersion "  ) , &SystemInfo::getOsVersion );
+        cls.addFunc( _SC("getPlatform  "  ) , &SystemInfo::getPlatform  );
+        cls.addFunc( _SC("getGraphicsBackendInfo"  ) , &SystemInfo::getGraphicsBackendInfo);
+
+        // cls.addVar(_SC("kernel"         ), &SystemInfo::kernel);
+        // cls.addVar(_SC("os"             ), &SystemInfo::osName);
+        // cls.addVar(_SC("osVer"          ), &SystemInfo::versionStr);
+        // cls.addVar(_SC("versionStr"     ), &SystemInfo::versionStr);
+        // cls.addVar(_SC("platform"       ), &SystemInfo::platform);
+        // cls.addVar(_SC("graphicsBackend"), &SystemInfo::graphicsBackendInfo);
+        // //cls.addVar(_SC(""), &SystemInfo::);
 
         return cls;
     }
