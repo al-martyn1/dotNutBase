@@ -18,7 +18,7 @@
 #include <algorithm>
 
 
-namespace dotnut {
+namespace dotNut {
 
 
 struct SystemInfo
@@ -115,6 +115,6 @@ struct SystemInfo
 
 
 
-} // namespace dotnut
+} // namespace dotNut
 
 

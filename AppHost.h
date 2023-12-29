@@ -20,7 +20,7 @@
 #include <algorithm>
 
 
-namespace dotnut {
+namespace dotNut {
 
 
 struct AppHost
@@ -46,5 +46,5 @@ struct AppHost
 }; // struct AppHost
 
 
-} // namespace dotnut {
+} // namespace dotNut {
 

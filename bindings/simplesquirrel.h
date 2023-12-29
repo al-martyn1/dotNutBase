@@ -7,7 +7,7 @@
 #include "../SystemInfo.h"
 
 
-namespace dotnut {
+namespace dotNut {
 
 namespace simplesquirrel {
 
@@ -28,6 +28,6 @@ void performBinding(TVM &vm, const std::string &ns="DotNut")
 
 } // namespace simplesquirrel {
 
-} // namespace dotnut
+} // namespace dotNut
 
 

@@ -16,7 +16,7 @@
 #include <algorithm>
 
 
-namespace dotnut {
+namespace dotNut {
 
 
 struct GraphicsBackendInfo
@@ -60,7 +60,7 @@ struct GraphicsBackendInfo
 
 
 
-} // namespace dotnut
+} // namespace dotNut
 
 
 

@@ -19,7 +19,7 @@
 #include <algorithm>
 
 
-namespace dotnut {
+namespace dotNut {
 
 
 struct System
@@ -117,5 +117,5 @@ struct System
 }; // System
 
 
-} // namespace dotnut {
+} // namespace dotNut {
 
