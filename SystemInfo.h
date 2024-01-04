@@ -85,7 +85,7 @@ struct SystemInfo
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("SystemInfo"))
     {
         auto cls = vm.addClass( className.c_str()
-                              , []( )
+                              , [=]( )
                                 {
                                     return new SystemInfo();
                                 }

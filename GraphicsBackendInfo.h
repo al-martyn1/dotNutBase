@@ -42,7 +42,7 @@ struct GraphicsBackendInfo
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("GraphicsBackendInfo"))
     {
         auto cls = vm.addClass( className.c_str()
-                              , []( )
+                              , [=]( )
                                 {
                                     return new GraphicsBackendInfo();
                                 }

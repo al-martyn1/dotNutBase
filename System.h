@@ -95,7 +95,7 @@ struct System
     static ssq::Class exposeToSquirrel(ssq::Table /* VM */ & vm, const ssq::sqstring &className = _SC("System"))
     {
         auto cls = vm.addClass( className.c_str()
-                              , []( )
+                              , [=]( )
                                 {
                                     return new System();
                                 }
