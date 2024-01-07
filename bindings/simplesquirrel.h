@@ -12,7 +12,7 @@ namespace dotNut {
 namespace simplesquirrel {
 
 template<typename TVM>
-void performBinding(TVM &vm, const std::string &ns="DotNut")
+void performBindingDotNutBase(TVM &vm, const std::string &ns="DotNut")
 {
 
 
